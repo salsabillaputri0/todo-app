@@ -8,6 +8,7 @@ use App\Models\TaskList;
 class Task extends Model
 {
     
+//  kolom ini untuk menemukan kolom apa saja yang bisa di isi
     protected $fillable = [
         'name',
         'description',
@@ -16,6 +17,7 @@ class Task extends Model
         'list_id'
     ];
 
+//  tidak bisa di isi hanya bisa di isi oleh sistem
     protected $guarded = [
         'id',
         'created_at',
@@ -36,6 +38,7 @@ class Task extends Model
         };
     }
 
+//  relasi one to many
     public function list() {
         return $this->belongsTo(TaskList::class, 'list_id');
     }
