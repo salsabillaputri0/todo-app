@@ -1,40 +1,50 @@
 <?php
 
 namespace App\Http\Controllers;
-// untuk memanggil class yang diperlukan
+
 use App\Models\Task;
 use App\Models\TaskList;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    // function index untuk mengerahkah file utama
     public function index() {
+        // untuk mengambil data variable yang ada di dalam folder models/task
         $data = [
             'title' => 'Home',
-            'test' => 'List',
+            // membuat judul untuk tampilan Home
             'lists' => TaskList::all(),
+            // lists untuk mengambil semua TaskList yang ada di folder models/TaskList
             'tasks' => Task::orderBy('created_at', 'desc')->get(),
+             // orderBy desc mengurutkan dari yang terbesar ke yang terkecil
             'priorities' => Task::PRIORITIES
+            // untuk mengambil nilai priorities dari const yang ada di app/models/task
         ];
-// mengarahkah ke folder view
+    
+
         return view('pages.home', $data);
     }
-// function store untuk menyimpan data le database (required adalah data yang dibutuhkan)
     public function store(Request $request) {
         $request->validate([
             'name' => 'required|max:100',
-            'list_id' => 'required'
+            'list_id' => 'required',
+            'description' => 'nullable|max:100',
+            'priority' => 'required|in:high,medium,low'
         ]);
-// task create berfungsi untuk memasukan data ke database/table
+        // digunakan untuk menyimpan data baru ke dalam basis data
+        // description digunakan untuk
+        // priority digunakan untuk menambahkan data 
         Task::create([
             'name' => $request->name,
-            'list_id' => $request->list_id
+            'list_id' => $request->list_id,
+            'description' => $request->description,
+            'priority' => $request->priority
         ]);
-    // mengembalikan ke halaman sebelumnya
+
+
         return redirect()->back();
     }
-// merubah atau mengupdate status dari belum selesai menjadi selesai
+
     public function complete($id) {
         Task::findOrFail($id)->update([
             'is_completed' => true
@@ -42,7 +52,6 @@ class TaskController extends Controller
 
         return redirect()->back();
     }
-//  destroy berfungsi untuk manghapus data yang ada di database/kolom
     public function destroy($id) {
         Task::findOrFail($id)->delete();
 
@@ -56,8 +65,6 @@ class TaskController extends Controller
             'title' => 'Details',
             'task' => $task,
         ];
-// memanggil tampilan 
         return view('pages.details', $data);
     }
 }
-// kode ini adalah struktur dasar untuk menampilkan halaman dalam laravel

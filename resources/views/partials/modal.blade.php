@@ -32,16 +32,33 @@
             </div>
             <div class="modal-body">
                 <input type="text" id="taskListId" name="list_id" hidden>
+                {{-- start name --}}
                 <div class="mb-3">
                     <label for="name" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="name" name="name"
                         placeholder="Masukkan nama list">
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-primary">Tambah</button>
-            </div>
-        </form>
-    </div>
+                {{-- and name --}}
+                <div class="mb-3">
+                    <label for="deskripsi" class="form-label">Deskripsi</label>
+                    <input type="text" class="form-control" id="deskripsi" name="deskripsi"
+                        placeholder="Masukkan deskripsi">
+                </div>
+ {{-- start name --}}
+ <div class="mb-3">
+    <label for="priority" class="form-label">Priority</label>
+    <select name="priority" class="form-select" aria-label="priority" id="priority">
+        <option value="low">low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+</div>
+{{-- and name --}}
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+<button type="submit" class="btn btn-primary">Tambah</button>
+</div>
+</form>
+</div>
 </div>
