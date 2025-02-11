@@ -28,7 +28,7 @@ class TaskController extends Controller
         $request->validate([
             'name' => 'required|max:100',
             'list_id' => 'required',
-            'description' => 'nullable|max:100',
+            'deskripsi' => 'nullable|max:100',
             'priority' => 'required|in:high,medium,low'
         ]);
         // digunakan untuk menyimpan data baru ke dalam basis data
@@ -37,14 +37,13 @@ class TaskController extends Controller
         Task::create([
             'name' => $request->name,
             'list_id' => $request->list_id,
-            'description' => $request->description,
+            'deskripsi' => $request->deskripsi,
             'priority' => $request->priority
         ]);
-
-
+        
         return redirect()->back();
     }
-
+    
     public function complete($id) {
         Task::findOrFail($id)->update([
             'is_completed' => true

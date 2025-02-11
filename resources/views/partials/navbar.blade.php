@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-info navbar-dark ">
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark ">
     <div class="container d-flex justify-content-between">
         <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
         <button type="button" class="btn btn-outline-dark flex-shrink-0 bg-dark text-white" style="width: 18rem; height: fit-content;"
@@ -10,5 +10,7 @@
         </button>
     </div>
 </nav>
+
+  
 
 <!-- Kode ini membuat navbar yang berpusat dengan warna biru , dan menampilkan nama aplikasi yang diambil dari konfigurasi Laravel.-->

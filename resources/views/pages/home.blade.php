@@ -10,11 +10,10 @@
                     style="width: fit-content;">
                     <i class="bi bi-plus-square fs-3"></i> Tambah
                 </button>
-            </div>
         @endif
         <div class="d-flex gap-3 px-3 flex-nowrap overflow-x-scroll overflow-y-hidden" style="height: 100vh;">
             @foreach ($lists as $list)
-                <div class="card flex-shrink-0" style="width: 18rem; max-height: 80vh;">
+                <div class="card flex-shrink-0 bg-secondary" style="width: 18rem; max-height: 80vh;">
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h4 class="card-title">{{ $list->name }}</h4>
                         <form action="{{ route('lists.destroy', $list->id) }}" method="POST" style="display: inline;">
@@ -30,6 +29,7 @@
                             @if ($task->list_id == $list->id)
                                 <div class="card">
                                     <div class="card-header">
+                                          
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="d-flex flex-column justify-content-center gap-2">
                                                 <p
@@ -74,7 +74,7 @@
                                 </div>
                             @endif
                         @endforeach
-                        <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal"
                         data-bs-target="#addTaskModal" data-list="{{ $list->id }}">
                         <span class="d-flex align-items-center justify-content-center">
                             <i class="bi bi-plus fs-5"></i>
@@ -87,13 +87,7 @@
                 </div>
             </div>
         @endforeach
-        <button type="button" class="btn btn-outline-primary flex-shrink-0" style="width: 18rem; height: fit-content;"
-            data-bs-toggle="modal" data-bs-target="#addListModal">
-            <span class="d-flex align-items-center justify-content-center">
-                <i class="bi bi-plus fs-5"></i>
-                Tambah
-            </span>
-        </button>
+       
     </div>
 </div>
 @endsection
