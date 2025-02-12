@@ -1,43 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
-// untuk memanggil class yang diperlukan 
+
+// Mengimpor model yang diperlukan untuk berinteraksi dengan database
 use App\Models\Task;
 use App\Models\TaskList;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    // Method untuk menampilkan halaman utama dengan daftar task dan task list
     public function index() {
-        // untuk mengambil data variable yang ada di dalam folder models/task
         $data = [
-            'title' => 'Home',
-            // membuat judul untuk tampilan Home
-            'lists' => TaskList::all(),
-            // lists untuk mengambil semua TaskList yang ada di folder models/TaskList
-            'tasks' => Task::orderBy('created_at', 'desc')->get(),
-             // orderBy desc mengurutkan dari yang terbesar ke yang terkecil
-            'priorities' => Task::PRIORITIES
-            // untuk mengambil nilai priorities dari const yang ada di app/models/task
+            'title' => 'Home', // Judul halaman
+            'lists' => TaskList::all(), // Mengambil semua data TaskList dari database
+            'tasks' => Task::orderBy('created_at', 'desc')->get(), // Mengambil semua task, diurutkan berdasarkan tanggal dibuat (desc = terbaru dulu)
+            'priorities' => Task::PRIORITIES // Mengambil prioritas task yang sudah didefinisikan dalam model Task (misalnya: low, medium, high)
         ];
     
-        // mengarahkan ke folder view
+        // Mengirimkan data ke tampilan halaman 'home' untuk ditampilkan
         return view('pages.home', $data);
     }
 
-    // function store untuk menyimpan data ke database (required adalah data yang dibutuhkan)
+    // Method untuk menyimpan data task baru ke dalam database
     public function store(Request $request) {
+        // Validasi input data dari form
         $request->validate([
-            'name' => 'required|max:100',
-            'list_id' => 'required',
-            'deskripsi' => 'max:255',
-            'priority' => 'required|in:low,medium,high',
+            'name' => 'required|max:100', // Nama task harus diisi dan maksimal 100 karakter
+            'list_id' => 'required', // ID list task yang harus dipilih
+            'deskripsi' => 'max:255', // Deskripsi task opsional dan maksimal 255 karakter
+            'priority' => 'required|in:low,medium,high', // Prioritas harus salah satu dari low, medium, atau high
         ]);
-        // digunakan untuk menyimpan data baru ke dalam basis data
-        // description digunakan untuk
-        // priority digunakan untuk menambahkan data 
-
-        // task create berfungsi untuk memasukan data ke database/table
+        
+        // Menyimpan data task baru ke database
         Task::create([
             'name' => $request->name,
             'list_id' => $request->list_id,
@@ -45,36 +40,41 @@ class TaskController extends Controller
             'priority' => $request->priority
         ]);
         
-        // mengembalikan kehalaman sebelumnya
+        // Kembali ke halaman sebelumnya setelah task disimpan
         return redirect()->back();
     }
-    
 
-    // merubah/mengupdata status dari belum selesam menjadi selesai
+    // Method untuk menandai task sebagai selesai
     public function complete($id) {
+        // Mencari task berdasarkan ID dan mengupdate status is_completed menjadi true
         Task::findOrFail($id)->update([
             'is_completed' => true
         ]);
 
+        // Kembali ke halaman sebelumnya
         return redirect()->back();
     }
 
-    // destroy berfungsi untuk menghapus data yang ada di database/kolom
+    // Method untuk menghapus task dari database
     public function destroy($id) {
+        // Mencari task berdasarkan ID dan menghapusnya dari database
         Task::findOrFail($id)->delete();
 
+        // Kembali ke halaman sebelumnya setelah task dihapus
         return redirect()->back();
     }
 
+    // Method untuk menampilkan detail task berdasarkan ID
     public function show($id) {
-        $task = Task::findOrfail($id);
+        // Mencari task berdasarkan ID
+        $task = Task::findOrFail($id);
 
         $data = [
-            'title' => 'Details',
-            'task' => $task,
+            'title' => 'Details', // Judul halaman detail
+            'task' => $task, // Mengirimkan data task yang ditemukan
         ];
-        // memanggil tampilan 
+
+        // Menampilkan halaman detail task
         return view('pages.details', $data);
     }
 }
-// kode ini adalah struktur dasar untuk menampilkan halaman dalam lara
