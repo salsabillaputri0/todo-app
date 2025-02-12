@@ -38,9 +38,7 @@
         </div>
         <div class="col-4">
             <div class="card" style="height: 80vh; max-height: 80vh;">
-
-            </div>
-            <h1>Tes</h1>
+             <div class="card"></div>
         </div>
     </div>
 </div>

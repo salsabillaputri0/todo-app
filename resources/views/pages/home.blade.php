@@ -6,7 +6,7 @@
         @if ($lists->count() == 0)
             <div class="d-flex flex-column align-items-center">
                 <p class="fw-bold text-center">Belum ada tugas yang ditambahkan</p>
-                <button type="button" class="btn btn-sm d-flex align-items-center gap-2 btn-outline-primary"
+                <button type="button" class="btn btn-sm d-flex align-items-center gap-2 btn-outline-success  "
                     style="width: fit-content;">
                     <i class="bi bi-plus-square fs-3"></i> Tambah
                 </button>
@@ -32,10 +32,10 @@
                                           
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="d-flex flex-column justify-content-center gap-2">
-                                                <p
-                                                    class="fw-bold lh-1 m-0 {{ $task->is_completed ? 'text-decoration-line-through' : '' }}">
+                                                <a href="{{route('tasks.show', $task->id)}}"
+                                                 class="fw-bold lh-1 m-0 {{ $task->is_completed ? 'text-decoration-line-through' : '' }}">
                                                     {{ $task->name }}
-                                                </p>
+                                                </a>
                                                 <span class="badge text-bg-{{ $task->priorityClass }} badge-pill"
                                                     style="width: fit-content">
                                                     {{ $task->priority }}
@@ -87,7 +87,78 @@
                 </div>
             </div>
         @endforeach
-       
+       <button type="button" class="btn btn-outline-dark flex-shrink-0" style="width: 18rem; height: fit-content;"
+       data-bs-toggle="modal" data-bs-target="#addListModal">
+       <span class="d-flex align-items-center justify-content-center">
+        <i class="bi bi-plus fs-5"></i>
+        Tambah
+       </span>
+       </button>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('search-input'); // Pastikan ada input dengan ID ini
+        searchInput = addEventListener('input', function () {
+            const query = searchInput.value.trim();
+
+            if (query.length >= 3){
+                fetch(`/search?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    renderSearchResults(data);
+                })
+                .catch(error => console.error('Error fetching search results:', error));
+            }
+        });
+
+        function renderSearchResults(data) {
+            const container = document.getElementById('content'); // Pastikan ini ID kontainer tugas anda 
+            container.innerHTML = ''; // Hapus semua isi lama
+
+            if (data.task_lists.length === 0 && data.tasks.length === 0) {
+                container.innerHTML = '<p class="fw-bold text-center">Tidak ada hasil ditemukan</p>';
+            return;
+            }
+
+            let contentHTML = '<div class="d-flex gap-3 px3 flex-nowrap overflow-x-scroll overflow-y-hidden" style="height: 80vh;"></div>';
+
+            data.task_lists.forEach(list => {
+                contentHTML += `
+                <div class="card flex-shrink-0 bg-info" style="width: 18rem; max-height: 80vh;">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h4 class="card-title">${list.name}</h4>
+                    </div>
+                    <div class="card-body d-flex flex-column gap-2 overflow-x-hidden">
+                    </div>
+                </div>`;
+
+            const filteredTasks = data.tasks.filter(task => task.list_id === list.id);
+            filteredTasks.forEach(task => {
+                contentHTML += `
+                <div class="card">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <div class="d-flex flex-column justify-content-center gap-2">
+                            <a href="/tasks/${task.id}" class="fw-bold 1h-1 m-0 ${task.is_completed ? 'text-decoration-line-through' : ''}">
+                                ${task.name}
+                                </a>
+                                <span class="badge text-bg-${task.priority}" 
+                                style="width: fit-content">${task.priority}</span>
+                                </div>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text text-truncate">${task.description ?? ''}</p>
+                                    </div>
+                                </div>
+                                `;
+            });
+
+            contentHTML += '</div></div>'; // Tutu[ list div]
+            });
+
+            contentHTML += '</div>'; // Tutup container utama
+            container.innerHTML = contentHTML;
+        }
+    });
+</script>
 @endsection

@@ -28,8 +28,8 @@ class TaskController extends Controller
         $request->validate([
             'name' => 'required|max:100',
             'list_id' => 'required',
-            'deskripsi' => 'nullable|max:100',
-            'priority' => 'required|in:high,medium,low'
+            'deskripsi' => 'max:255',
+            'priority' => 'required|in:low,medium,high',
         ]);
         // digunakan untuk menyimpan data baru ke dalam basis data
         // description digunakan untuk
