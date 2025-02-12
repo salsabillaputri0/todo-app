@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// untuk memanggil class yang diperlukan 
 use App\Models\Task;
 use App\Models\TaskList;
 use Illuminate\Http\Request;
@@ -21,9 +21,11 @@ class TaskController extends Controller
             // untuk mengambil nilai priorities dari const yang ada di app/models/task
         ];
     
-
+        // mengarahkan ke folder view
         return view('pages.home', $data);
     }
+
+    // function store untuk menyimpan data ke database (required adalah data yang dibutuhkan)
     public function store(Request $request) {
         $request->validate([
             'name' => 'required|max:100',
@@ -34,6 +36,8 @@ class TaskController extends Controller
         // digunakan untuk menyimpan data baru ke dalam basis data
         // description digunakan untuk
         // priority digunakan untuk menambahkan data 
+
+        // task create berfungsi untuk memasukan data ke database/table
         Task::create([
             'name' => $request->name,
             'list_id' => $request->list_id,
@@ -41,9 +45,12 @@ class TaskController extends Controller
             'priority' => $request->priority
         ]);
         
+        // mengembalikan kehalaman sebelumnya
         return redirect()->back();
     }
     
+
+    // merubah/mengupdata status dari belum selesam menjadi selesai
     public function complete($id) {
         Task::findOrFail($id)->update([
             'is_completed' => true
@@ -51,6 +58,8 @@ class TaskController extends Controller
 
         return redirect()->back();
     }
+
+    // destroy berfungsi untuk menghapus data yang ada di database/kolom
     public function destroy($id) {
         Task::findOrFail($id)->delete();
 
@@ -64,6 +73,8 @@ class TaskController extends Controller
             'title' => 'Details',
             'task' => $task,
         ];
+        // memanggil tampilan 
         return view('pages.details', $data);
     }
 }
+// kode ini adalah struktur dasar untuk menampilkan halaman dalam laravel
