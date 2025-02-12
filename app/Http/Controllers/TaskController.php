@@ -41,7 +41,7 @@ class TaskController extends Controller
         Task::create([
             'name' => $request->name,
             'list_id' => $request->list_id,
-            'deskripsi' => $request->deskripsi,
+            'description' => $request->deskripsi,
             'priority' => $request->priority
         ]);
         
@@ -77,4 +77,4 @@ class TaskController extends Controller
         return view('pages.details', $data);
     }
 }
-// kode ini adalah struktur dasar untuk menampilkan halaman dalam laravel
+// kode ini adalah struktur dasar untuk menampilkan halaman dalam lara
