@@ -13,12 +13,16 @@
     </div>
 
     {{-- Menggunakan sistem grid dari Bootstrap, kolom pertama (col-8) akan mengambil 8 bagian dari total 12 kolom, yang berarti akan mengambil lebih banyak ruang daripada kolom kedua. --}}
-    <div class="row">
+    <div class="row my-3">
         <div class="col-8">
             <div class="card" style="height: 80vh; max-height: 80vh;">
                 {{-- Menampilkan nama tugas ($task->name) dengan kelas text-truncate agar teks yang panjang tetap dipotong. Ada juga tombol dengan ikon pensil yang belum berfungsi (tombol edit). --}}
                 <div class="card-header d-flex align-items-center justify-content-between overflow-hidden">
-                    <h3 class=" fw-bold fs-4 text-truncate" style="max-width: 80%">{{$task->name}}</h3>
+                    <h3 class=" fw-bold fs-4 text-truncate" style="max-width: 80%">{{$task->name}}
+                        <span class="fs-6 fw-medium ">
+                            di {{$task->list->name}}
+                        </span>
+                    </h3>
                     <button class="btn btn-sm">
                     <i class="bi bi-pencil-square fs-4"></i>
                 </button>
@@ -31,31 +35,44 @@
                 </div>
                 {{-- Card Footer: Menampilkan tombol untuk menghapus tugas. Anda dapat menghubungkan tombol ini ke fungsionalitas penghapusan (misalnya, dengan form DELETE di controller). --}}
                 <div class="card-footer">
-                    <button class="btn btn-outline-danger w-100">
+                    <form action="{{route('tasks.destroy', $task->id)}}" 
+                        method="POST">
+                        @csrf
+                        @method('DELETE')
+                   
+                    <button type="submit" class="btn btn-outline-danger w-100">
                         Hapus
                     </button>
+                </form>
                 </div>
-                
-                {{-- <button class="btn btn-sm" 
-                data-bs-toggle="modal" 
-                data-bs-target="#addListModal">
-                <i class="bi bi-pencil-square"></i>
-                </button>  --}}
             </div>
         </div>
         {{-- Kolom kedua (col-4) yang akan menampilkan elemen lainnya, seperti gambar atau konten terkait tugas, dengan lebar 4 bagian dari 12 kolom. --}}
         <div class="col-4">
             {{-- Menampilkan gambar dari path yang telah disesuaikan menggunakan asset('storage/app/public/images/Spider-Man_ Homecoming.jpg'). Gambar ini diambil dari direktori storage publik dan dipastikan dapat diakses melalui link. --}}
-            <div class="card" style="height: 80vh; max-height: 80vh;">
-             <div class="card">
-                {{-- <div class="container mt-5">
-                    <div style="width: 18rem;">
-                      <img src="{{asset('storage/app/public/images/Spider-Man_ Homecoming.jpg')}}" class="card-img-top" alt="images">
-                      <div class="card-body">
-                        <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      </div>
-                    </div>
-                  </div> --}}
+            <div class="card" style="height: 80vh;">
+                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden">
+                    <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">Details</h3>
+                </div>
+                <div class="card-body d-flex flex-column gap-2">
+                    <form action="{{ route('tasks.changeList', $task->id) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <select class="form-select" name="list_id" onchange="this.form.submit()">
+                            @foreach ($lists as $list)
+                                <option value="{{ $list->id }}" {{ $list->id == $task->list_id ? 'selected' : '' }}>
+                                    {{ $list->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </form>
+                    <h6 class="fs-6">
+                        Priotitas:
+                        <span class="badge text-bg-{{ $task->priorityClass }} badge-pill" style="width: fit-content">
+                            {{ $task->priority }}
+                        </span>
+                    </h6>
+                </div>
                   {{-- Menutup kolom, baris, dan kontainer, menyelesaikan struktur layout untuk halaman ini. --}}
              </div>
         </div>

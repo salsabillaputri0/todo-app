@@ -6,5 +6,5 @@
 
 @if (session('success'))
     <p>{{ session('success') }}</p>
-    <img src="{{ asset('storage/app/public/images/Spider-Man_ Homecoming.jpg' . session('path')) }}" alt="Uploaded Image">
+    <img src=". session('path')) }}" alt="Uploaded Image">
 @endif --}}

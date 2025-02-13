@@ -53,7 +53,7 @@ class TaskController extends Controller
 
         // Kembali ke halaman sebelumnya
         return redirect()->back();
-    }
+    } 
 
     // Method untuk menghapus task dari database
     public function destroy($id) {
@@ -61,20 +61,32 @@ class TaskController extends Controller
         Task::findOrFail($id)->delete();
 
         // Kembali ke halaman sebelumnya setelah task dihapus
-        return redirect()->back();
+        return redirect()->route('home');
     }
 
     // Method untuk menampilkan detail task berdasarkan ID
-    public function show($id) {
-        // Mencari task berdasarkan ID
-        $task = Task::findOrFail($id);
-
+    public function show($id)
+    {
         $data = [
-            'title' => 'Details', // Judul halaman detail
-            'task' => $task, // Mengirimkan data task yang ditemukan
+            'title' => 'Task',
+            'lists' => TaskList::all(),
+            'task' => Task::findOrFail($id),
         ];
 
         // Menampilkan halaman detail task
         return view('pages.details', $data);
+    }
+    
+    public function changeList(Request $request, Task $task)
+    {
+        $request->validate([
+            'list_id' => 'required|exists:task_lists,id',
+        ]);
+
+        Task::findOrFail($task->id)->update([
+            'list_id' => $request->list_id
+        ]);
+
+        return redirect()->back()->with('success', 'List berhasil diperbarui!');
     }
 }

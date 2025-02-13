@@ -20,6 +20,8 @@ Route::resource('tasks', TaskController::class);
 // Route untuk menandai tugas sebagai selesai (completed), memanggil method 'complete' dari TaskController
 Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->name('tasks.complete');
 
+Route::patch('/tasks/{task}/change-list', [TaskController::class, 'changeList'])->name('tasks.changeList');
+
 // Route::get('upload', [ImageController::class, 'showForm']);
 // Route::post('upload', [ImageController::class, 'uploadImage'])->name('upload.image');
 // Route::get('images', [ImageController::class, 'showImages'])->name('show.images');

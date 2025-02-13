@@ -1,8 +1,10 @@
-{{--  --}}
+{{-- Menggunakan layout app yang umum di seluruh halaman aplikasi. --}}
 @extends('layouts.app')
 
+{{-- Bagian utama content, dengan pengaturan overflow untuk menghindari scroll pada sumbu vertikal dan horizontal. --}}
 @section('content')
     <div id="content" class="overflow-y-hidden overflow-x-hidden">
+        {{-- Menampilkan pesan jika tidak ada daftar tugas yang ada, dan tombol untuk menambah daftar tugas baru. --}}
         @if ($lists->count() == 0)
             <div class="d-flex flex-column align-items-center">
                 <p class="fw-bold text-center">Belum ada tugas yang ditambahkan</p>
@@ -11,11 +13,14 @@
                     <i class="bi bi-plus-square fs-3"></i> Tambah
                 </button>
         @endif
+        {{-- Membuat container fleksibel dengan scroll horizontal, mengisi seluruh tinggi viewport. --}}
         <div class="d-flex gap-3 px-3 flex-nowrap overflow-x-scroll overflow-y-hidden" style="height: 100vh;">
+            {{-- Mengiterasi setiap daftar tugas ($lists) dan membuat sebuah card untuk setiap daftar tugas. --}}
             @foreach ($lists as $list)
                 <div class="card flex-shrink-0 bg-secondary" style="width: 18rem; max-height: 80vh;">
                     <div class="card-header d-flex align-items-center justify-content-between">
                         <h4 class="card-title">{{ $list->name }}</h4>
+                        {{-- Form untuk menghapus daftar tugas, menggunakan metode DELETE. --}}
                         <form action="{{ route('lists.destroy', $list->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
@@ -25,13 +30,16 @@
                         </form>
                     </div>
                     <div class="card-body d-flex flex-column gap-2 overflow-x-hidden">
+                        {{-- Mengiterasi tugas yang terkait dengan daftar tertentu dan menampilkannya dalam card. --}}
                         @foreach ($tasks as $task)
                             @if ($task->list_id == $list->id)
+                            <!-- Tampilkan tugas untuk daftar tertentu -->
                                 <div class="card">
                                     <div class="card-header">
                                           
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="d-flex flex-column justify-content-center gap-2">
+                                                {{-- Tautan ke detail tugas, dengan teks yang dicoret jika tugas sudah selesai ($task->is_completed). --}}
                                                 <a href="{{route('tasks.show', $task->id)}}"
                                                  class="fw-bold lh-1 m-0 {{ $task->is_completed ? 'text-decoration-line-through' : '' }}">
                                                     {{ $task->name }}
@@ -41,6 +49,7 @@
                                                     {{ $task->priority }}
                                                 </span>
                                             </div>
+                                            {{-- Form untuk menghapus tugas, menggunakan metode DELETE. --}}
                                             <form action="{{ route('tasks.destroy', $task->id) }}" method="POST"
                                                 style="display: inline;">
                                                 @csrf
@@ -58,6 +67,7 @@
                                     </div>
                                     @if (!$task->is_completed)
                                         <div class="card-footer">
+                                            {{-- Form untuk menandai tugas sebagai selesai dengan metode PATCH. --}}
                                             <form action="{{ route('tasks.complete', $task->id) }}" method="POST">
                                                 @csrf
                                                 @method('PATCH')
@@ -74,6 +84,7 @@
                                 </div>
                             @endif
                         @endforeach
+                        {{-- Tombol untuk membuka modal penambahan tugas baru, yang terkait dengan daftar tugas tertentu. --}}
                         <button type="button" class="btn btn-sm btn-outline-dark " data-bs-toggle="modal"
                         data-bs-target="#addTaskModal" data-list="{{ $list->id }}">
                         <span class="d-flex align-items-center justify-content-center">
@@ -96,6 +107,8 @@
        </button>
     </div>
 </div>
+
+{{-- Mengambil input pencarian, dan jika panjangnya lebih dari 3 karakter, mengirim permintaan ke endpoint pencarian. --}}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('search-input'); // Pastikan ada input dengan ID ini
@@ -111,7 +124,7 @@
                 .catch(error => console.error('Error fetching search results:', error));
             }
         });
-
+        // Fungsi renderSearchResults akan memperbarui konten dengan hasil pencarian tugas dan daftar tugas.
         function renderSearchResults(data) {
             const container = document.getElementById('content'); // Pastikan ini ID kontainer tugas anda 
             container.innerHTML = ''; // Hapus semua isi lama
@@ -161,4 +174,6 @@
         }
     });
 </script>
+
+{{-- Halaman ini memungkinkan pengguna untuk mengelola daftar tugas, menambah, menghapus, dan menandai tugas sebagai selesai. --}}
 @endsection
