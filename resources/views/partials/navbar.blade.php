@@ -5,19 +5,19 @@
     <div class="container d-flex justify-content-between">
 
         <!-- Formulir pencarian untuk mencari data -->
-        {{-- <form class="d-flex" action="{{route('search')}}" method="GET" role="search">
+        <form class="d-flex" action="{{route('search')}}" method="GET" role="search">
             <!-- Input pencarian dengan id "search-input" -->
             <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <!-- Tombol untuk melakukan pencarian atau refresh hasil pencarian 
              Formulir dengan input untuk mencari data, yang memungkinkan pengguna untuk mencari dan kemudian menampilkan hasil pencarian. Tombol bertuliskan "Refresh" digunakan untuk menyegarkan pencarian.-->
             <button class="btn btn-outline-black" type="submit">Refresh</button>
-        </form> --}}
+        </form>
         
         <!-- Logo aplikasi, diambil dari konfigurasi 'app.name' 
         Nama aplikasi diambil dari konfigurasi Laravel (config('app.name')), dan akan ditampilkan sebagai nama brand di navbar.-->
         <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
 
-        <!-- Tombol untuk membuka modal tambah list -->
+        
         
                 
         </button>
