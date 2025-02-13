@@ -18,14 +18,7 @@
         <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
 
         <!-- Tombol untuk membuka modal tambah list -->
-        <button type="button" class="btn btn-outline-dark flex-shrink-0 bg-dark text-white" style="width: 18rem; height: fit-content;"
-        {{-- Tombol untuk membuka modal yang memungkinkan pengguna menambahkan list baru ke aplikasi. Tombol ini memiliki ikon plus dan menggunakan modal dengan id #addListModal. --}}
-                data-bs-toggle="modal" data-bs-target="#addListModal">
-                <span class="d-flex align-items-center justify-content-center">
-                    <!-- Ikon tambah (plus) -->
-                    <i class="bi bi-plus fs-5"></i>
-                    Tambah
-                </span>
+        
                 
         </button>
     </div>

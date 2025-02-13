@@ -40,6 +40,7 @@ class TaskController extends Controller
             'priority' => $request->priority
         ]);
         
+        
         // Kembali ke halaman sebelumnya setelah task disimpan
         return redirect()->back();
     }
