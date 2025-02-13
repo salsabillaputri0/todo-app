@@ -30,9 +30,10 @@
                             di {{$task->list->name}}
                         </span>
                     </h3>
-                    <button class="btn btn-sm">
-                    <i class="bi bi-pencil-square fs-4"></i>
-                </button>
+                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#editTaskModal">
+                            <i class="bi bi-pencil-square"></i>
+                  </button>
                 </div>
                 {{-- Card Body: Menampilkan deskripsi tugas dengan menggunakan $task->description. --}}
                 <div class="card-body">
@@ -82,6 +83,43 @@
                 </div>
                   {{-- Menutup kolom, baris, dan kontainer, menyelesaikan struktur layout untuk halaman ini. --}}
              </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form action="{{ route('tasks.update', $task->id) }}" method="POST" class="modal-content">
+                @method('PUT')
+                @csrf
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="editTaskModalLabel">Edit Task</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" value="{{ $task->list_id }}" name="list_id" hidden>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="name" name="name"
+                            value="{{ $task->name }}" placeholder="Masukkan nama list">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Deskripsi</label>
+                        <textarea class="form-control" name="description" id="description" rows="3" placeholder="Masukkan deskripsi">{{ $task->description }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="priority" class="form-label">Priority</label>
+                        <select class="form-control" name="priority" id="priority">
+                            <option value="low" @selected($task->priority == 'low')>Low</option>
+                            <option value="medium" @selected($task->priority == 'medium')>Medium</option>
+                            <option value="high" @selected($task->priority == 'high')>High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

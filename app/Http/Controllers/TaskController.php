@@ -89,4 +89,23 @@ class TaskController extends Controller
 
         return redirect()->back()->with('success', 'List berhasil diperbarui!');
     }
+
+    public function update(Request $request, Task $task)
+    {
+        $request->validate([
+            'list_id' => 'required',
+            'name' => 'required|max:100',
+            'description' => 'max:255',
+            'priority' => 'required|in:low,medium,high'
+        ]);
+
+        Task::findOrFail($task->id)->update([
+            'list_id' => $request->list_id,
+            'name' => $request->name,
+            'description' => $request->description,
+            'priority' => $request->priority
+        ]);
+
+        return redirect()->back()->with('success', 'Task berhasil diperbarui!');
+    }
 }
