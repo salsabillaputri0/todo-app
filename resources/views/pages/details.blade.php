@@ -12,6 +12,13 @@
         </a>
     </div>
 
+    @session('success')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    @endsession
+
     {{-- Menggunakan sistem grid dari Bootstrap, kolom pertama (col-8) akan mengambil 8 bagian dari total 12 kolom, yang berarti akan mengambil lebih banyak ruang daripada kolom kedua. --}}
     <div class="row my-3">
         <div class="col-8">
