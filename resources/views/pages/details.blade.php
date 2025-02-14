@@ -64,6 +64,12 @@
                 </div>
                 <div class="card-body d-flex flex-column gap-2">
                     <form action="{{ route('tasks.changeList', $task->id) }}" method="POST">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <p class="card-text">List film yang akan ditonton</p>
+                            </div>
+                          </div>
                         @csrf
                         @method('PATCH')
                         <select class="form-select" name="list_id" onchange="this.form.submit()">

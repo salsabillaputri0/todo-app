@@ -109,4 +109,23 @@ class TaskController extends Controller
 
         return redirect()->back()->with('success', 'Task berhasil diperbarui!');
     }
+
+    public function showImages()
+{
+    $images = Image::all(); // Mengambil semua gambar dari database
+    return view('images.index', compact('images')); // Menampilkan ke view
 }
+
+public function deleteImage(Image $image)
+{
+    // Hapus file gambar dari storage
+    Storage::delete('public/' . $image->path);
+
+    // Hapus record gambar dari database
+    $image->delete();
+
+    return back()->with('success', 'Gambar berhasil dihapus!');
+}
+
+}
+
