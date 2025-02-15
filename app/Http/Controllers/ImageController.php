@@ -16,25 +16,25 @@ class ImageController extends Controller
 
     
 
-// public function uploadImage(Request $request)
-// {
-//     // Validasi gambar yang diupload
-//     $request->validate([
-//         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-//     ]);
+public function uploadImage(Request $request)
+{
+    // Validasi gambar yang diupload
+    $request->validate([
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-//     // Mengambil file yang diupload
-//     $image = $request->file('image');
+    // Mengambil file yang diupload
+    $image = $request->file('image');
 
-//     // Menyimpan gambar ke storage/public
-//     $path = $image->store('images', 'public');
+    // Menyimpan gambar ke storage/public
+    $path = $image->store('images', 'public');
 
-//     // Menyimpan path gambar ke database
-//     Image::create(['path' => $path]);
+    // Menyimpan path gambar ke database
+    Image::create(['path' => $path]);
 
-//     // Mengembalikan response
-//     return back()->with('success', 'Gambar berhasil diupload!')->with('path', $path);
-// }
+    // Mengembalikan response
+    return back()->with('success', 'Gambar berhasil diupload!')->with('path', $path);
+}
 
 public function showImages()
 {
