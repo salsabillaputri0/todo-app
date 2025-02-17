@@ -22,3 +22,5 @@ Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->nam
 
 Route::patch('/tasks/{task}/change-list', [TaskController::class, 'changeList'])->name('tasks.changeList');
 
+Route::get("task/status/{id}", [TaskController::class,"updateTaskStatus"])
+    ->name("task.status.update");
