@@ -24,7 +24,7 @@
         <div class="col-8">
             <div class="card" style="height: 80vh; max-height: 80vh;">
                 {{-- Menampilkan nama tugas ($task->name) dengan kelas text-truncate agar teks yang panjang tetap dipotong. Ada juga tombol dengan ikon pensil yang belum berfungsi (tombol edit). --}}
-                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden">
+                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-secondary">
                     <h3 class=" fw-bold fs-4 text-truncate" style="max-width: 80%">{{$task->name}}
                         <span class="fs-6 fw-medium ">
                             di {{$task->list->name}}
@@ -58,8 +58,8 @@
         {{-- Kolom kedua (col-4) yang akan menampilkan elemen lainnya, seperti gambar atau konten terkait tugas, dengan lebar 4 bagian dari 12 kolom. --}}
         <div class="col-4">
             {{-- Menampilkan gambar dari path yang telah disesuaikan menggunakan asset('storage/app/public/images/Spider-Man_ Homecoming.jpg'). Gambar ini diambil dari direktori storage publik dan dipastikan dapat diakses melalui link. --}}
-            <div class="card bg-green-950" style="height: 80vh;">
-                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden">
+            <div class="card" style="height: 80vh;">
+                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-secondary">
                     <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">Details</h3>
                 </div>
                         @csrf
@@ -89,7 +89,7 @@
             <form action="{{ route('tasks.update', $task->id) }}" method="POST" class="modal-content">
                 @method('PUT')
                 @csrf
-                <div class="modal-header">
+                <div class="modal-header bg-primary">
                     <h1 class="modal-title fs-5" id="editTaskModalLabel">Edit Task</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
