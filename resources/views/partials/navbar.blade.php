@@ -8,7 +8,7 @@
         <button class="btn btn-outline-dark" type="submit">Search</button>
       </form>
       <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
-        <a href="resources/views/pages/profile.blade.php" class="nav-link">
+        <a href="resources/views/biodata.blade.php" class="nav-link">
             <img class="rounded-circle me-lg-2" src="assets/img/salsa.jpg" alt=""
                 style="width: 55px; height: 40px" />
             <span class="d-none d-lg-inline-flex">Salsabilla Putri Ranesti</span>
