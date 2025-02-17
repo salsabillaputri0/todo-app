@@ -2,20 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Biodata;
 use Illuminate\Http\Request;
 
 class BiodataController extends Controller
 {
-    public function show()
+    public function index()
     {
-        $biodata = [
-            'nama' => 'Salsabilla Putri Ranesti',
-            'alamat' => 'Kalijati Barat',
-            'email' => 'spranesti07@gmail.com',
-            'telepon' => '081212946069',
-            'tanggal_lahir' => '2007-01-09',
-        ];
+        $biodatas = Biodata::all();
+        return view('biodata.index', compact('biodatas'));
+    }
 
-        return view('biodata', compact('biodata'));
+    public function create()
+    {
+        return view('biodata.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'email' => 'required|email',
+            'telepon' => 'required',
+            'deskripsi' => 'required',
+        ]);
+
+        Biodata::create($request->all());
+        return redirect()->route('biodata.index')->with('success', 'Biodata berhasil ditambahkan.');
     }
 }

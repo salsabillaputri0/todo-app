@@ -22,4 +22,4 @@ Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->nam
 
 Route::patch('/tasks/{task}/change-list', [TaskController::class, 'changeList'])->name('tasks.changeList');
 
-Route::get('/biodata', [BiodataController::class, 'show']);
+Route::resource('biodata', BiodataController::class);
