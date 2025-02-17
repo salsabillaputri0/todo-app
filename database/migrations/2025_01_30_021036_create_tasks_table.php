@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string("deadline");
+            // $table->string("deadline");
             $table->boolean('is_completed')->default(false);
             $table->enum('priority',['low','medium','high'])->default('medium');
             $table->timestamps();
