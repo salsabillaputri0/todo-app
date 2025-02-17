@@ -24,13 +24,13 @@
         <div class="col-8">
             <div class="card" style="height: 80vh; max-height: 80vh;">
                 {{-- Menampilkan nama tugas ($task->name) dengan kelas text-truncate agar teks yang panjang tetap dipotong. Ada juga tombol dengan ikon pensil yang belum berfungsi (tombol edit). --}}
-                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-secondary">
+                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-success">
                     <h3 class=" fw-bold fs-4 text-truncate" style="max-width: 80%">{{$task->name}}
                         <span class="fs-6 fw-medium ">
                             di {{$task->list->name}}
                         </span>
                     </h3>
-                    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                    <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal"
                             data-bs-target="#editTaskModal">
                             <i class="bi bi-pencil-square"></i>
                   </button>
@@ -59,7 +59,7 @@
         <div class="col-4">
             {{-- Menampilkan gambar dari path yang telah disesuaikan menggunakan asset('storage/app/public/images/Spider-Man_ Homecoming.jpg'). Gambar ini diambil dari direktori storage publik dan dipastikan dapat diakses melalui link. --}}
             <div class="card" style="height: 80vh;">
-                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-secondary">
+                <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-success">
                     <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">Details</h3>
                 </div>
                         @csrf
@@ -89,7 +89,7 @@
             <form action="{{ route('tasks.update', $task->id) }}" method="POST" class="modal-content">
                 @method('PUT')
                 @csrf
-                <div class="modal-header bg-primary">
+                <div class="modal-header bg-secondary">
                     <h1 class="modal-title fs-5" id="editTaskModalLabel">Edit Task</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="submit" class="btn btn-primary">Edit</button>
+                    <button type="submit" class="btn btn-success">Edit</button>
                 </div>
             </form>
         </div>

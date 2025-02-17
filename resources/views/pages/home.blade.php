@@ -18,7 +18,7 @@
             {{-- Mengiterasi setiap daftar tugas ($lists) dan membuat sebuah card untuk setiap daftar tugas. --}}
             @foreach ($lists as $list)
                 <div class="card flex-shrink-0 bg-secondary" style="width: 18rem; max-height: 80vh;">
-                    <div class="card-header d-flex align-items-center justify-content-between">
+                    <div class="card-header d-flex align-items-center justify-content-between bg-success">
                         <h4 class="card-title">{{ $list->name }}</h4>
                         {{-- Form untuk menghapus daftar tugas, menggunakan metode DELETE. --}}
                         <form action="{{ route('lists.destroy', $list->id) }}" method="POST" style="display: inline;">
@@ -71,7 +71,7 @@
                                             <form action="{{ route('tasks.complete', $task->id) }}" method="POST">
                                                 @csrf
                                                 @method('PATCH')
-                                                <button type="submit" class="btn btn-sm btn-primary w-100">
+                                                <button type="submit" class="btn btn-sm btn-success w-100">
                                                     <span class="d-flex align-items-center justify-content-center">
                                                         <i class="bi bi-check fs-5"></i>
                                                         Selesai

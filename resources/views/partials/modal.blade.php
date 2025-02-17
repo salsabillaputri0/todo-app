@@ -5,7 +5,7 @@
         <form action="{{ route('lists.store') }}" method="POST" class="modal-content">
             @method('POST')
             @csrf
-            <div class="modal-header bg-primary">
+            <div class="modal-header bg-secondary">
              <h1 class="modal-title fs-5" id="addListModalLabel">Tambah List</h1>                                           {{-- Digunakan untuk menambah daftar tugas baru dengan input nama list.
                 Tombol untuk menutup modal dan tombol untuk menyimpan list ditampilkan di bagian footer modal. --}}
                 <!-- Tombol untuk menutup modal -->
@@ -23,7 +23,7 @@
                 <!-- Tombol untuk membatalkan dan menutup modal -->
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                 <!-- Tombol untuk menyimpan List -->
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-success">Tambah</button>
             </div>
         </form>
     </div>
@@ -37,7 +37,7 @@
         <form action="{{ route('tasks.store') }}" method="POST" class="modal-content">
             @method('POST')
             @csrf
-            <div class="modal-header bg-primary">
+            <div class="modal-header bg-secondary">
                 <h1 class="modal-title fs-5" id="addTaskModalLabel">Tambah Task</h1>
                 <!-- Tombol untuk menutup modal -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -77,7 +77,7 @@
                 <!-- Tombol untuk membatalkan dan menutup modal -->
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                 <!-- Tombol untuk menyimpan task -->
-                <button type="submit" class="btn btn-primary">Tambah</button>
+                <button type="submit" class="btn btn-success">Tambah</button>
             </div>
         </form>
     </div>
