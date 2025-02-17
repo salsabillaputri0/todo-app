@@ -3,27 +3,29 @@
   - Memiliki warna latar belakang abu-abu (bg-secondary) dan teks putih. -->
   <nav class="navbar navbar-expand-lg bg-success">
     <div class="container-fluid">
-      <div class="nav-item dropdown">
-        <a href="#" class="nav-link">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
+      <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
+        <a href="resources/views/pages/profile.blade.php" class="nav-link">
             <img class="rounded-circle me-lg-2" src="assets/img/salsa.jpg" alt=""
-                style="width: 40px; height: 40px" />
-            <span class="d-none d-lg-inline-flex">Salsabilla P.R</span>
+                style="width: 55px; height: 40px" />
+            <span class="d-none d-lg-inline-flex">Salsabilla Putri Ranesti</span>
+            
         </a>
+        </div>
     </div>
 </nav>
+
       {{-- <a class="navbar-brand" href="#">Profile</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> --}}
-      <div class="d-flex align-items-center">
-          <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
-          
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-dark" type="submit">Search</button>
-            </form>
-            </div>
-      </div>
+      
+            
+            
+    
     </div>
   </nav>
   
