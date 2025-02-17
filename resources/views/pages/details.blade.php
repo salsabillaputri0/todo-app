@@ -58,18 +58,10 @@
         {{-- Kolom kedua (col-4) yang akan menampilkan elemen lainnya, seperti gambar atau konten terkait tugas, dengan lebar 4 bagian dari 12 kolom. --}}
         <div class="col-4">
             {{-- Menampilkan gambar dari path yang telah disesuaikan menggunakan asset('storage/app/public/images/Spider-Man_ Homecoming.jpg'). Gambar ini diambil dari direktori storage publik dan dipastikan dapat diakses melalui link. --}}
-            <div class="card" style="height: 80vh;">
+            <div class="card bg-green-950" style="height: 80vh;">
                 <div class="card-header d-flex align-items-center justify-content-between overflow-hidden">
                     <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">Details</h3>
                 </div>
-                <div class="card-body d-flex flex-column gap-2">
-                    <form action="{{ route('tasks.changeList', $task->id) }}" method="POST">
-                        <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <p class="card-text">List film yang akan ditonton</p>
-                            </div>
-                          </div>
                         @csrf
                         @method('PATCH')
                         <select class="form-select" name="list_id" onchange="this.form.submit()">

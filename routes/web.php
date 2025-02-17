@@ -22,8 +22,3 @@ Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->nam
 
 Route::patch('/tasks/{task}/change-list', [TaskController::class, 'changeList'])->name('tasks.changeList');
 
-Route::get('upload', [ImageController::class, 'showForm']);
-Route::post('upload', [ImageController::class, 'uploadImage'])->name('upload.image');
-Route::get('images', [ImageController::class, 'showImages'])->name('show.images');
-// Route::delete('images/{image}', [ImageController::class, 'deleteImage'])->name('image.delete');
-
