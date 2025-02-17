@@ -5,7 +5,7 @@
         <form action="{{ route('lists.store') }}" method="POST" class="modal-content">
             @method('POST')
             @csrf
-            <div class="modal-header">
+            <div class="modal-header bg-primary">
              <h1 class="modal-title fs-5" id="addListModalLabel">Tambah List</h1>                                           {{-- Digunakan untuk menambah daftar tugas baru dengan input nama list.
                 Tombol untuk menutup modal dan tombol untuk menyimpan list ditampilkan di bagian footer modal. --}}
                 <!-- Tombol untuk menutup modal -->
@@ -37,7 +37,7 @@
         <form action="{{ route('tasks.store') }}" method="POST" class="modal-content">
             @method('POST')
             @csrf
-            <div class="modal-header">
+            <div class="modal-header bg-primary">
                 <h1 class="modal-title fs-5" id="addTaskModalLabel">Tambah Task</h1>
                 <!-- Tombol untuk menutup modal -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

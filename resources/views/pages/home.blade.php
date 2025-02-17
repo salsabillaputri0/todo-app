@@ -8,7 +8,7 @@
         @if ($lists->count() == 0)
             <div class="d-flex flex-column align-items-center">
                 <p class="fw-bold text-center">Belum ada tugas yang ditambahkan</p>
-                <button type="button" class="btn btn-sm d-flex align-items-center gap-2 btn-outline-success  "
+                <button type="button" class="btn btn-sm d-flex align-items-center gap-2 btn-outline-success"
                     style="width: fit-content;">
                     <i class="bi bi-plus-square fs-3"></i> Tambah
                 </button>
