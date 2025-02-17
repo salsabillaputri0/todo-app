@@ -29,7 +29,6 @@ class TaskController extends Controller
             'name' => 'required|max:100', // Nama task harus diisi dan maksimal 100 karakter
             'list_id' => 'required', // ID list task yang harus dipilih
             'deskripsi' => 'max:255', // Deskripsi task opsional dan maksimal 255 karakter
-            // 'deadline' => 'required|date',
             'priority' => 'required|in:low,medium,high', // Prioritas harus salah satu dari low, medium, atau high
         ]);
         
@@ -38,7 +37,6 @@ class TaskController extends Controller
             'name' => $request->name,
             'list_id' => $request->list_id,
             'description' => $request->deskripsi,
-            // 'deadline' => $request->deadline,
             'priority' => $request->priority
         ]);
         
