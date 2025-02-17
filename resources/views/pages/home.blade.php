@@ -3,6 +3,33 @@
 
 {{-- Bagian utama content, dengan pengaturan overflow untuk menghindari scroll pada sumbu vertikal dan horizontal. --}}
 @section('content')
+<style>
+    /* Mengatur gambar latar belakang untuk elemen dengan ID 'content' */
+    #content {
+        background-image: url('{{ asset('images/background.jpeg') }}');
+        /* Menggunakan gambar dari folder public/images/yg bernama background image */
+        background-size: cover;
+        /* Memastikan gambar menutupi seluruh area */
+        background-position: center;
+        /* Memposisikan gambar di tengah */
+        color: white;
+        /* Mengubah warna teks menjadi putih untuk kontras yang lebih baik */
+        min-height: 100vh;
+        /* Memastikan konten memenuhi tinggi layar */
+
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        /* Efek zoom saat hover */
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+        /* Efek zoom saat hover pada tombol */
+    }
+
+</style>
     <div id="content" class="overflow-y-hidden overflow-x-hidden">
         {{-- Menampilkan pesan jika tidak ada daftar tugas yang ada, dan tombol untuk menambah daftar tugas baru. --}}
         @if ($lists->count() == 0)
@@ -98,7 +125,7 @@
                 </div>
             </div>
         @endforeach
-       <button type="button" class="btn btn-outline-dark flex-shrink-0" style="width: 18rem; height: fit-content;"
+       <button type="button" class="btn btn-outline-dark flex-shrink-0 bg-succes" style="width: 18rem; height: fit-content;"
        data-bs-toggle="modal" data-bs-target="#addListModal">
        <span class="d-flex align-items-center justify-content-center">
         <i class="bi bi-plus fs-5"></i>
