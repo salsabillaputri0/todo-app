@@ -3,26 +3,30 @@
   - Memiliki warna latar belakang abu-abu (bg-secondary) dan teks putih. -->
   <nav class="navbar navbar-expand-lg bg-success">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link">
+            <img class="rounded-circle me-lg-2" src="assets/img/salsa.jpg" alt=""
+                style="width: 40px; height: 40px" />
+            <span class="d-none d-lg-inline-flex">Salsabilla P.R</span>
+        </a>
+    </div>
+</nav>
+      {{-- <a class="navbar-brand" href="#">Profile</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Profile</a>
-          </li>
-          <div class="d-flex align-items-center justify-content center">
+      </button> --}}
+      <div class="d-flex align-items-center">
           <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
-        </div>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" type="submit">Search</button>
-        </form>
+          
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form>
+            </div>
       </div>
     </div>
   </nav>
+  
         <!-- Formulir pencarian untuk mencari data -->
     
         <!-- Logo aplikasi, diambil dari konfigurasi 'app.name' 
