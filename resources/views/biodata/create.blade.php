@@ -2,6 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <link rel="stylesheet" href="bootsrap_templats/dist/css/bootstrap.min.css">
+    
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('{{ asset('images/background3.jpeg') }}');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card {
+    width: 90%;
+    max-width: 440px;
+    color: #fff;
+    text-align: center;
+    padding: 50px 35px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 36px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.card img {
+    width: 140px;
+    border-radius: 50%;
+}
+
+.card h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.card p{
+    font-size: 18px;
+    margin: 10px auto;
+    max-width: 330px;
+}
+
+.card .links img{
+    width: 40px;
+    border-radius: 50%;
+    margin: 10px 5px;
+    transition: background 0.5;
+}
+
+.card .links imh:hover{
+    background: beige;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" data-tlit>
+            <img src="/assets/img/salsa.JPG">
+            <h2>PROFILE</h2>
+            <tr>
+                <td>
+            <p>NAMA: SALSABILLA PUTRI RANESTI</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>KELAS: XII - RPL</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>TTL: SUABANG, 09-01-2007 </p>
+                </td>
+            </tr>
+            
+                <div class="links">
+                <a href="https://facebook.com"><img src="Facebook.svg"></a>
+                <a href="https://instagram.com"><img src="Instagram.svg"></a>
+                <a herf="https://twitter.com"><img src="Twitter.svg"></a>
+            </div>
+        </div>
+     </div>
+     <script src="bootsrap_templats/dist/js/bootstrap.min.js"></script> 
+    </body>
+</html>
+{{-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodata</title>
@@ -66,7 +167,7 @@
             <span class="d-none d-lg-inline-flex"></span>
         </a>
         <div className="flex items-center">
-            <table border="4" >
+            <table border="4" class="d-flex align-items-center justify-content center" >
                 <tbody>
                     <tr>
                     <td>NAMA : SALSABILLA PUTRI RANESTI</td>
@@ -101,4 +202,4 @@
     <p><span className="font-bold">ALAMAT</span> : Kalijati Barat</p>
     <p><span className="font-bold">KELAS</span> : XII</p>
     <p><span className="font-bold">JURUSAN</span> : Rekayasa Perangkat Lunak</p>
-</div> --}}
+</div> --}} --}}
