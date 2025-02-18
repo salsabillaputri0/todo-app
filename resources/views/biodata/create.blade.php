@@ -17,7 +17,7 @@
 .container {
     width: 100%;
     height: 100vh;
-    background-image: url('{{ asset('images/background3.jpeg') }}');
+    background-image: url('{{ asset('images/background.jpeg') }}');
     background-position: center;
     background-size: cover;
     display: flex;

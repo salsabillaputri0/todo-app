@@ -6,7 +6,8 @@
 <style>
     /* Mengatur gambar latar belakang untuk elemen dengan ID 'content' */
     #content {
-        background-image: url('{{ asset('images/background3.jpeg') }}');
+        background-color: gray;
+        /* background-image: url('{{ asset('images/background3.jpeg') }}'); */
         /* Menggunakan gambar dari folder public/images/yg bernama background image */
         background-size: cover;
         /* Memastikan gambar menutupi seluruh area */
@@ -125,11 +126,11 @@
                 </div>
             </div>
         @endforeach
-       <button type="button" class="btn btn-outline-dark flex-shrink-0" style="width: 18rem; height: fit-content;"
+       <button type="button" class="btn btn-outline-dark flex-shrink-0" style="width: 5rem; height: fit-content;"
        data-bs-toggle="modal" data-bs-target="#addListModal">
        <span class="d-flex align-items-center justify-content-center">
         <i class="bi bi-plus fs-5"></i>
-        Tambah
+        
        </span>
        </button>
     </div>
