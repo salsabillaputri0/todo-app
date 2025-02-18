@@ -72,10 +72,15 @@
     <div class="container">
         <div class="card" data-tlit>
             <img src="/assets/img/salsa.JPG">
-            <h2>PROFILE</h2>
+           <b> <h3>PROFILE</h3></b>
             <tr>
                 <td>
             <p>NAMA: SALSABILLA PUTRI RANESTI</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+            <p>NIT: 2223612</p>
                 </td>
             </tr>
             <tr>
@@ -88,12 +93,12 @@
                     <p>TTL: SUABANG, 09-01-2007 </p>
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <p>JURUSAN: REKAYASA PERANGKAT LUNAK </p>
+                </td>
+            </tr>
             
-                <div class="links">
-                <a href="https://facebook.com"><img src="Facebook.svg"></a>
-                <a href="https://instagram.com"><img src="Instagram.svg"></a>
-                <a herf="https://twitter.com"><img src="Twitter.svg"></a>
-            </div>
         </div>
      </div>
      <script src="bootsrap_templats/dist/js/bootstrap.min.js"></script> 
