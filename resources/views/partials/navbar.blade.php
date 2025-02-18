@@ -11,7 +11,7 @@
         <a href="{{route('biodata.create')}}" class="nav-link">
             <img class="rounded-circle me-lg-2" src="assets/img/salsa.jpg" alt=""
                 style="width: 55px; height: 40px" />
-            <span class="d-none d-lg-inline-flex">Salsabilla Putri Ranesti</span>
+            <span class="d-none d-lg-inline-flex">Profile</span>
             
         </a>
         </div>

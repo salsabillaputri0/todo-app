@@ -66,18 +66,39 @@
             <span class="d-none d-lg-inline-flex"></span>
         </a>
         <div className="flex items-center">
-        <div>
-            <p><span className="font-bold">NAMA</span> : Salsabilla Putri Ranesti</p>
-            <p><span className="font-bold">NIT</span> : 2223612</p>
-            <p><span className="font-bold">TTL</span> : Subang, 09-Januari-2007</p>
-            <p><span className="font-bold">ALAMAT</span> : Kalijati Barat</p>
-            <p><span className="font-bold">KELAS</span> : XII</p>
-            <p><span className="font-bold">JURUSAN</span> : Rekayasa Perangkat Lunak</p>
-        </div>
+            <table border="4" >
+                <tbody>
+                    <tr>
+                    <td>NAMA : SALSABILLA PUTRI RANESTI</td>
+                    </tr>
+                    <tr>
+                    <td>NIT : 2223612</td>
+                    </tr>
+                    <tr>
+                    <td>TTL : SUBANG, 09-JANUARI-2007</td>
+                    </tr>
+                    <tr>
+                    <td>KELAS : XII</td>
+                    </tr>
+                    <tr>
+                    <td>JURUSAN : REKAYASA PERANGKAT LUNAK</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         </div>
     </div>
+    </div>
+    
 </body>
 
 
 </html>
+{{-- <div>
+    <p><span className="font-bold">NAMA</span> : Salsabilla Putri Ranesti</p>
+    <p><span className="font-bold">NIT</span> : 2223612</p>
+    <p><span className="font-bold">TTL</span> : Subang, 09-Januari-2007</p>
+    <p><span className="font-bold">ALAMAT</span> : Kalijati Barat</p>
+    <p><span className="font-bold">KELAS</span> : XII</p>
+    <p><span className="font-bold">JURUSAN</span> : Rekayasa Perangkat Lunak</p>
+</div> --}}
