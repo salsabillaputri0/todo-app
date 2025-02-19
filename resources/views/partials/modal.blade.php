@@ -6,7 +6,7 @@
             @method('POST')
             @csrf
             <div class="modal-header bg-secondary">
-                <i class="btn btn-outline-light bi bi-card-list "></i>
+                <i class="btn btn-sm bi bi-card-list text-white gap-2"></i>
              <h1 class="modal-title fs-5 text-white" id="addListModalLabel">Tambah List</h1>                                          
               {{-- Digunakan untuk menambah daftar tugas baru dengan input nama list.
                 Tombol untuk menutup modal dan tombol untuk menyimpan list ditampilkan di bagian footer modal. --}}
@@ -40,7 +40,7 @@
             @method('POST')
             @csrf
             <div class="modal-header bg-secondary">
-                <i class="btn btn-outline-light bi bi-list-task"></i>
+                <i class="btn btn-sm bi bi-list-task text-white gap-2"></i>
                 <h1 class="modal-title fs-5 text-white" id="addTaskModalLabel">Tambah Task</h1>
                 <!-- Tombol untuk menutup modal -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

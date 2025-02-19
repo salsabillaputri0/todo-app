@@ -5,17 +5,25 @@
     <div class="container-fluid">  
       <!-- Logo aplikasi, diambil dari konfigurasi 'app.name' 
         Nama aplikasi diambil dari konfigurasi Laravel (config('app.name')), dan akan ditampilkan sebagai nama brand di navbar.-->
-        
-      <a class="navbar-brand fw-bolder bi bi-card-list text-white" href="#">{{ config('app.name') }}
+        <div class="d-flex align-items-center justify-content-between">
+        <a href="https://github.com/salsabillaputri0/" class="nav-link">
+          <a href="https://www.instagram.com/evolvesalsabilla/" class="nav-link">
+          <span class="d-none d-lg-inline-flex text-white"> 
+            <i class="bi bi-github gap-2 px-2"></i>
+            <i class="bi bi-instagram"></i>
+            </span>
+      </a>
+    </div>
+      <a class="navbar-brand fw-bolder text-white" href="#">{{ config('app.name') }}
       </a>
         <a href="{{route('biodata.create')}}" class="nav-link">
             <img class="rounded-circle me-lg-2" src="/assets/img/salsa1.jpg" alt=""
-                style="width: 50px; height: 40px" />
+                style="width: 40px; height: 30px" />
             <span class="d-none d-lg-inline-flex text-white">
-              <i class="bi bi-person-circle"></i>
+              <i class="bi bi-person-circle px-2"></i>
               <b>PROFILE</b></span>
-            
         </a>
+        
         </div>
     </div>
 </nav>
