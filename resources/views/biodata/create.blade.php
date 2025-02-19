@@ -27,9 +27,9 @@
 }
 
 .card {
-    width: 90%;
+    width: 220%;
     max-width: 440px;
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 50px 35px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -92,7 +92,7 @@
             </tr>
             <tr>
                 <td>
-                    <p>KELAS: XII - RPL</p>
+                    <p>KELAS: XII</p>
                 </td>
             </tr>
             <tr>
@@ -102,7 +102,7 @@
             </tr>
             <tr>
                 <td>
-                    <p>JURUSAN: REKAYASA PERANGKAT LUNAK </p>
+                    <p>JURUSAN: RPL</p>
                 </td>
             </tr>
             

@@ -3,15 +3,15 @@
   - Memiliki warna latar belakang abu-abu (bg-secondary) dan teks putih. -->
   <nav class="navbar navbar-expand-lg bg-success">
     <div class="container-fluid">
-      <form class="d-flex" role="search">
+      {{-- <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form>
-      <a class="navbar-brand fw-bolder text-white" href="#">{{ config('app.name') }}</a>
+      </form> --}}
+      <a class="navbar-brand fw-bolder" href="#">{{ config('app.name') }}</a>
         <a href="{{route('biodata.create')}}" class="nav-link">
-            <img class="rounded-circle me-lg-2" src="assets/img/salsa.jpg" alt=""
+            <img class="rounded-circle me-lg-2" src="/assets/img/salsa.JPG" alt=""
                 style="width: 55px; height: 40px" />
-            <span class="d-none d-lg-inline-flex text-white"><b>PROFILE</b></span>
+            <span class="d-none d-lg-inline-flex"><b>PROFILE</b></span>
             
         </a>
         </div>
