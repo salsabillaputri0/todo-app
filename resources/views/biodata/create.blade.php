@@ -29,7 +29,7 @@
 .card {
     width: 220%;
     max-width: 440px;
-    color: #000000;
+    color: #fff;
     text-align: center;
     padding: 50px 35px;
     border: 1px solid rgba(255, 255, 255, 0.3);

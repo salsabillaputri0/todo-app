@@ -3,7 +3,7 @@
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TaskListController;
 use App\Http\Controllers\BiodataController;
-use App\Http\Controllers\SearchController;
+// use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 // Membuat route untuk home

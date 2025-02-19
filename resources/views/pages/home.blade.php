@@ -6,7 +6,7 @@
 <style>
     /* Mengatur gambar latar belakang untuk elemen dengan ID 'content' */
     #content {
-        background-color: gray;
+        background-color: white;
         /* background-image: url('{{ asset('images/background3.jpeg') }}'); */
         /* Menggunakan gambar dari folder public/images/yg bernama background image */
         background-size: cover;
@@ -46,7 +46,7 @@
             {{-- Mengiterasi setiap daftar tugas ($lists) dan membuat sebuah card untuk setiap daftar tugas. --}}
             @foreach ($lists as $list)
                 <div class="card flex-shrink-0 bg-secondary" style="width: 18rem; max-height: 80vh;">
-                    <div class="card-header d-flex align-items-center justify-content-between bg-success">
+                    <div class="card-header d-flex align-items-center justify-content-between bg-success text-white">
                         <h4 class="card-title">{{ $list->name }}</h4>
                         {{-- Form untuk menghapus daftar tugas, menggunakan metode DELETE. --}}
                         <form action="{{ route('lists.destroy', $list->id) }}" method="POST" style="display: inline;">
@@ -126,7 +126,7 @@
                 </div>
             </div>
         @endforeach
-       <button type="button" class="btn btn-outline-dark flex-shrink-0" style="width: 5rem; height: fit-content;"
+       <button type="button" class="btn btn-outline-success flex-shrink-0" style="width: 5rem; height: fit-content;"
        data-bs-toggle="modal" data-bs-target="#addListModal">
        <span class="d-flex align-items-center justify-content-center">
         <i class="bi bi-plus fs-5"></i>
