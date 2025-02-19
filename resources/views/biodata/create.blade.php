@@ -64,19 +64,21 @@
     margin: 10px auto;
     max-width: 330px;
     text-align: left;
+    text-shadow: 0 4px 30px rgb(0, 0, 0);
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     /* Efek zoom saat hover */
     }
 
 .btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.02);
     /* Efek zoom saat hover pada tombol */
     }
 .container h3 {
     text-align: center;
+    text-shadow: 0 4px 30px rgb(0, 0, 0);
 }
 
 .container h4 {

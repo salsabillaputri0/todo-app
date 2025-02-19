@@ -17,10 +17,8 @@
       <a class="navbar-brand fw-bolder text-white" href="#">{{ config('app.name') }}
       </a>
         <a href="{{route('biodata.create')}}" class="nav-link">
-            <img class="rounded-circle me-lg-2" src="/assets/img/salsa1.jpg" alt=""
-                style="width: 40px; height: 30px" />
             <span class="d-none d-lg-inline-flex text-white">
-              <i class="bi bi-person-circle px-2"></i>
+              <i class="bi bi-person-square px-2"></i>
               <b>PROFILE</b></span>
         </a>
         
