@@ -7,11 +7,11 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-dark" type="submit">Search</button>
       </form> --}}
-      <a class="navbar-brand fw-bolder bi bi-card-checklist text-white" href="#">{{ config('app.name') }}
+      <a class="navbar-brand fw-bolder bi bi-card-list text-white" href="#">{{ config('app.name') }}
       </a>
         <a href="{{route('biodata.create')}}" class="nav-link">
             <img class="rounded-circle me-lg-2" src="/assets/img/salsa1.jpg" alt=""
-                style="width: 55px; height: 40px" />
+                style="width: 50px; height: 40px" />
             <span class="d-none d-lg-inline-flex text-white">
               <i class="bi bi-person-circle"></i>
               <b>PROFILE</b></span>

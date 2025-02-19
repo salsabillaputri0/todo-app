@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="bootsrap_templats/dist/css/bootstrap.min.css">
     
     <style>
-        * {
+       {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -42,41 +42,49 @@
 .card img {
     width: 140px;
     border-radius: 50%;
-}
-
-.card h2 {
-    font-size: 40px;
-    font-weight: 600;
-    margin-top: 20px;
+   
 }
 
 .card p{
     font-size: 18px;
     margin: 10px auto;
     max-width: 330px;
+    text-align: left;
 }
 
-.card .links img{
-    width: 40px;
-    border-radius: 50%;
-    margin: 10px 5px;
-    transition: background 0.5;
+.container h3 {
+    text-align: center;
 }
 
-.card .links imh:hover{
-    background: beige;
+.card:hover {
+    transform: scale(1.05);
+    /* Efek zoom saat hover */
 }
+
+.btn:hover {
+    transform: scale(1.1);
+    /* Efek zoom saat hover pada tombol */    
+}
+
+
     </style>
 </head>
 <body>
-    
-    </div>
+
     <div class="container">
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="{{route('home')}}" class="btn btn-sm fw-bold fs-4 ">
-                <i class="bi bi-arrow-left-short"></i>
-               <h3> Kembali</h3>
-            </a>
+    {{-- Bagian ini menampilkan tombol "Kembali" yang akan mengarahkan pengguna ke halaman utama (home) ketika diklik. Tombol menggunakan ikon panah kiri (bi bi-arrow-left-short) dari Bootstrap Icons. Dengan menggunakan kelas d-flex, elemen ini ditempatkan di tengah. --}}
+    <div class="d-flex align-items-center justify-content-center">
+        <a href="{{route('home')}}" class="btn btn-sm fw-bold fs-4">
+            <i class="bi bi-arrow-left-square"></i>
+           <h4>Kembali</h4> 
+        </a>
+    </div>
+    @session('success')
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    @endsession
         <div class="card" data-tlit>
             <b> <h3>PROFILE</h3></b> <br>
             <img src="/assets/img/salsa1.jpg">
