@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
 <head>
     <title>Biodata</title>
@@ -6,14 +6,7 @@
 <body>
     <h1> Biodata</h1>
     <a href="{{ route('biodata.create') }}">Tambah Biodata</a>
-    <table>
-        <tr>
-            <th>Nama</th>
-            <th>Alamat</th>
-            <th>Email</th>
-            <th>Telepon</th>
-            <th>Deskripsi</th>
-        </tr>
+    
         @foreach ($biodatas as $biodata)
         <tr>
             <td>{{ $biodata->nama }}</td>
@@ -25,4 +18,4 @@
         @endforeach
     </table>
 </body>
-</html>
+</html> --}}
