@@ -6,7 +6,7 @@
 <style>
     /* Mengatur gambar latar belakang untuk elemen dengan ID 'content' */
     #content {
-        background-color: white;
+        background-image: url('{{asset('/images/Wallpaper.jpeg')}}');
         /* background-image: url('{{ asset('images/background3.jpeg') }}'); */
         /* Menggunakan gambar dari folder public/images/yg bernama background image */
         background-size: cover;

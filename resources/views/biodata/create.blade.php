@@ -17,7 +17,7 @@
 .container {
     width: 100%;
     height: 100vh;
-    background-image: url('{{ asset('images/background.jpeg') }}');
+    background-image: url('{{ asset('images/wallpaper.jpeg') }}');
     background-position: center;
     background-size: cover;
     display: flex;
@@ -29,7 +29,7 @@
 .card {
     width: 220%;
     max-width: 440px;
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 50px 35px;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -78,7 +78,7 @@
                 Kembali
             </a>
         <div class="card" data-tlit>
-            <img src="/assets/img/salsa.JPG">
+            <img src="/assets/img/salsa1.jpg">
            <b> <h3>PROFILE</h3></b>
             <tr>
                 <td>

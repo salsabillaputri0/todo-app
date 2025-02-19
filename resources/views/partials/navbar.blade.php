@@ -9,7 +9,7 @@
       </form> --}}
       <a class="navbar-brand fw-bolder text-white" href="#">{{ config('app.name') }}</a>
         <a href="{{route('biodata.create')}}" class="nav-link">
-            <img class="rounded-circle me-lg-2" src="/assets/img/salsa.JPG" alt=""
+            <img class="rounded-circle me-lg-2" src="/assets/img/salsa1.jpg" alt=""
                 style="width: 55px; height: 40px" />
             <span class="d-none d-lg-inline-flex text-white"><b>PROFILE</b></span>
             
