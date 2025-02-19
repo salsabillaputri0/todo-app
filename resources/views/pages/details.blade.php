@@ -3,6 +3,34 @@
 
 {{-- Mendefinisikan bagian content yang akan menggantikan placeholder di layout utama. container adalah kelas dari Bootstrap yang memberikan margin otomatis dan pengaturan lebar, dan pb-3 memberikan padding bawah untuk jarak. --}}
 @section('content')
+<style>
+    /* Mengatur gambar latar belakang untuk elemen dengan ID 'content' */
+    #content {
+        background-image: url('{{asset('/images/Wallpaper.jpeg')}}');
+        /* background-image: url('{{ asset('images/background3.jpeg') }}'); */
+        /* Menggunakan gambar dari folder public/images/yg bernama background image */
+        background-size: cover;
+        /* Memastikan gambar menutupi seluruh area */
+        background-position: center;
+        /* Memposisikan gambar di tengah */
+        color: black;
+        /* Mengubah warna teks menjadi putih untuk kontras yang lebih baik */
+        min-height: 100vh;
+        /* Memastikan konten memenuhi tinggi layar */
+
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        /* Efek zoom saat hover */
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+        /* Efek zoom saat hover pada tombol */
+    }
+
+</style>
 <div id ="content" class="container pb-3">
     {{-- Bagian ini menampilkan tombol "Kembali" yang akan mengarahkan pengguna ke halaman utama (home) ketika diklik. Tombol menggunakan ikon panah kiri (bi bi-arrow-left-short) dari Bootstrap Icons. Dengan menggunakan kelas d-flex, elemen ini ditempatkan di tengah. --}}
     <div class="d-flex align-items-center justify-content center">
