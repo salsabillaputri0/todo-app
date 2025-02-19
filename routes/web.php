@@ -13,7 +13,7 @@ Route::get('/', [TaskController::class, 'index'])->name('home');
 // Route resource untuk mengelola 'lists', menggunakan TaskListController
 Route::resource('lists', TaskListController::class);
 // Route untuk fitur pencarian, memanggil method 'search' dari SearchController
-Route::get('search', [SearchController::class, 'search'])->name('search');
+// Route::get('search', [SearchController::class, 'search'])->name('search');
 
 // Route resource untuk mengelola 'tasks', menggunakan TaskController
 Route::resource('tasks', TaskController::class);
