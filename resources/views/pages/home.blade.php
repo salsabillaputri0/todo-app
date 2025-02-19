@@ -21,12 +21,12 @@
     }
 
     .card:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         /* Efek zoom saat hover */
     }
 
     .btn:hover {
-        transform: scale(1.1);
+        transform: scale(1.02);
         /* Efek zoom saat hover pada tombol */
     }
 
@@ -42,10 +42,10 @@
                 </button>
         @endif
         {{-- Membuat container fleksibel dengan scroll horizontal, mengisi seluruh tinggi viewport. --}}
-        <div class="d-flex gap-3 px-3 flex-nowrap overflow-x-scroll overflow-y-hidden" style="height: 100vh;">
+        <div class="d-flex gap-4 px-5 flex-nowrap overflow-x-scroll overflow-y-hidden" style="height: 150vh;">
             {{-- Mengiterasi setiap daftar tugas ($lists) dan membuat sebuah card untuk setiap daftar tugas. --}}
             @foreach ($lists as $list)
-                <div class="card flex-shrink-0 bg-secondary" style="width: 18rem; max-height: 80vh;">
+                <div class="card flex-shrink-0 bg-secondary" style="width: 18rem; max-height: 100vh;">
                     <div class="card-header d-flex align-items-center justify-content-between bg-success text-white">
                         <h4 class="card-title">{{ $list->name }}</h4>
                         {{-- Form untuk menghapus daftar tugas, menggunakan metode DELETE. --}}

@@ -7,6 +7,10 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-dark" type="submit">Search</button>
       </form> --}}
+      
+      <!-- Logo aplikasi, diambil dari konfigurasi 'app.name' 
+        Nama aplikasi diambil dari konfigurasi Laravel (config('app.name')), dan akan ditampilkan sebagai nama brand di navbar.-->
+        
       <a class="navbar-brand fw-bolder bi bi-card-list text-white" href="#">{{ config('app.name') }}
       </a>
         <a href="{{route('biodata.create')}}" class="nav-link">
@@ -34,8 +38,6 @@
   
         <!-- Formulir pencarian untuk mencari data -->
     
-        <!-- Logo aplikasi, diambil dari konfigurasi 'app.name' 
-        Nama aplikasi diambil dari konfigurasi Laravel (config('app.name')), dan akan ditampilkan sebagai nama brand di navbar.-->
         
 
         
