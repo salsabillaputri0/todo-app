@@ -21,12 +21,12 @@
     }
 
     .card:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         /* Efek zoom saat hover */
     }
 
     .btn:hover {
-        transform: scale(1.1);
+        transform: scale(1.02);
         /* Efek zoom saat hover pada tombol */
     }
 

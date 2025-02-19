@@ -2,12 +2,7 @@
   - Menggunakan kelas navbar-expand-lg untuk membuat navbar responsif di berbagai ukuran layar. 
   - Memiliki warna latar belakang abu-abu (bg-secondary) dan teks putih. -->
   <nav class="navbar navbar-expand-lg bg-success">
-    <div class="container-fluid">
-      {{-- <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
-        <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form> --}}
-      
+    <div class="container-fluid">  
       <!-- Logo aplikasi, diambil dari konfigurasi 'app.name' 
         Nama aplikasi diambil dari konfigurasi Laravel (config('app.name')), dan akan ditampilkan sebagai nama brand di navbar.-->
         

@@ -7,13 +7,27 @@
     <link rel="stylesheet" href="bootsrap_templats/dist/css/bootstrap.min.css">
     
     <style>
-       {
+ {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
 }
 
+
+    /* Mengatur gambar latar belakang untuk elemen dengan ID 'content' */
+    #content {
+    
+        background-size: cover;
+        /* Memastikan gambar menutupi seluruh area */
+        background-position: center;
+        /* Memposisikan gambar di tengah */
+        color: black;
+        /* Mengubah warna teks menjadi putih untuk kontras yang lebih baik */
+        min-height: 100vh;
+        /* Memastikan konten memenuhi tinggi layar */
+
+    }
 .container {
     width: 100%;
     height: 100vh;
@@ -35,7 +49,7 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.2);
     border-radius: 36px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgb(0, 0, 0);
     backdrop-filter: blur(5px);
 }
 
@@ -52,40 +66,38 @@
     text-align: left;
 }
 
+.card:hover {
+    transform: scale(1.05);
+    /* Efek zoom saat hover */
+    }
+
+.btn:hover {
+    transform: scale(1.1);
+    /* Efek zoom saat hover pada tombol */
+    }
 .container h3 {
     text-align: center;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    /* Efek zoom saat hover */
+.container h4 {
+    min-height: 100vh;
+    text-align: left;
 }
-
-.btn:hover {
-    transform: scale(1.1);
-    /* Efek zoom saat hover pada tombol */    
-}
-
 
     </style>
 </head>
 <body>
 
     <div class="container">
+        <div class="d-flex align-items-center justify-content center">
+            <a href="{{route('home')}}" class="btn btn-sm fw-bold fs-4">
+                <i class="bi bi-arrow-left"></i>
+               <h4>Kembali</h4> 
+            </a>
+        </div>
     {{-- Bagian ini menampilkan tombol "Kembali" yang akan mengarahkan pengguna ke halaman utama (home) ketika diklik. Tombol menggunakan ikon panah kiri (bi bi-arrow-left-short) dari Bootstrap Icons. Dengan menggunakan kelas d-flex, elemen ini ditempatkan di tengah. --}}
-    <div class="d-flex align-items-center justify-content-center">
-        <a href="{{route('home')}}" class="btn btn-sm fw-bold fs-4">
-            <i class="bi bi-arrow-left-square"></i>
-           <h4>Kembali</h4> 
-        </a>
-    </div>
-    @session('success')
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-    @endsession
-        <div class="card" data-tlit>
+   
+        <div class="card">
             <b> <h3>PROFILE</h3></b> <br>
             <img src="/assets/img/salsa1.jpg">
            
