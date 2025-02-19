@@ -24,7 +24,7 @@
             <div class="card bg-secondary" style="height: 80vh; max-height: 80vh;">
                 {{-- Menampilkan nama tugas ($task->name) dengan kelas text-truncate agar teks yang panjang tetap dipotong. Ada juga tombol dengan ikon pensil yang belum berfungsi (tombol edit). --}}
                 <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-success">
-                    <h3 class=" fw-bold fs-4 text-truncate" style="max-width: 80%">{{$task->name}}
+                    <h3 class=" fw-bold fs-4 text-truncate  text-white" style="max-width: 80%">{{$task->name}}
                         <span class="fs-6 fw-medium ">
                             di {{$task->list->name}}
                         </span>
@@ -59,7 +59,7 @@
             {{-- Menampilkan gambar dari path yang telah disesuaikan menggunakan asset('storage/app/public/images/Spider-Man_ Homecoming.jpg'). Gambar ini diambil dari direktori storage publik dan dipastikan dapat diakses melalui link. --}}
             <div class="card bg-secondary" style="height: 80vh;">
                 <div class="card-header d-flex align-items-center justify-content-between overflow-hidden bg-success">
-                    <h3 class="fw-bold fs-4 text-truncate mb-0" style="width: 80%">Details</h3>
+                    <h3 class="fw-bold fs-4 text-truncate mb-0 text-white" style="width: 80%">Details</h3>
                 </div>
                         @csrf
                         @method('PATCH')

@@ -6,7 +6,7 @@
             @method('POST')
             @csrf
             <div class="modal-header bg-secondary">
-             <h1 class="modal-title fs-5" id="addListModalLabel">Tambah List</h1>                                           {{-- Digunakan untuk menambah daftar tugas baru dengan input nama list.
+             <h1 class="modal-title fs-5 text-white" id="addListModalLabel">Tambah List</h1>                                           {{-- Digunakan untuk menambah daftar tugas baru dengan input nama list.
                 Tombol untuk menutup modal dan tombol untuk menyimpan list ditampilkan di bagian footer modal. --}}
                 <!-- Tombol untuk menutup modal -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -38,7 +38,7 @@
             @method('POST')
             @csrf
             <div class="modal-header bg-secondary">
-                <h1 class="modal-title fs-5" id="addTaskModalLabel">Tambah Task</h1>
+                <h1 class="modal-title fs-5 text-white" id="addTaskModalLabel">Tambah Task</h1>
                 <!-- Tombol untuk menutup modal -->
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
