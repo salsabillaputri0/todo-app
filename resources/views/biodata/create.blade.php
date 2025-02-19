@@ -69,7 +69,14 @@
     </style>
 </head>
 <body>
+    
+    </div>
     <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="{{route('home')}}" class="btn btn-sm fw-bold fs-4">
+                <i class="bi bi-arrow-left-short"></i>
+                Kembali
+            </a>
         <div class="card" data-tlit>
             <img src="/assets/img/salsa.JPG">
            <b> <h3>PROFILE</h3></b>
@@ -90,7 +97,7 @@
             </tr>
             <tr>
                 <td>
-                    <p>TTL: SUABANG, 09-01-2007 </p>
+                    <p>TTL: SUBANG, 09-01-2007 </p>
                 </td>
             </tr>
             <tr>
