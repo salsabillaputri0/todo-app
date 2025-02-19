@@ -7,11 +7,10 @@
     {{-- Bagian ini menampilkan tombol "Kembali" yang akan mengarahkan pengguna ke halaman utama (home) ketika diklik. Tombol menggunakan ikon panah kiri (bi bi-arrow-left-short) dari Bootstrap Icons. Dengan menggunakan kelas d-flex, elemen ini ditempatkan di tengah. --}}
     <div class="d-flex align-items-center justify-content center">
         <a href="{{route('home')}}" class="btn btn-sm fw-bold fs-4">
-            <i class="bi bi-arrow-left-short"></i>
+            <i class="bi bi-arrow-left-square"></i>
             Kembali
         </a>
     </div>
-
     @session('success')
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}

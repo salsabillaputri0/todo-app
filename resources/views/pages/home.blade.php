@@ -53,7 +53,7 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm p-0">
-                                <i class="bi bi-trash fs-5 text-danger"></i>
+                                <i class="bi bi-trash3-fill fs-5 text-danger"></i>
                             </button>
                         </form>
                     </div>
@@ -83,7 +83,7 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm p-0">
-                                                    <i class="bi bi-x-circle text-danger fs-5"></i>
+                                                    <i class="bi bi-file-excel-fill text-danger fs-5"></i>
                                                 </button>
                                             </form>
                                         </div>

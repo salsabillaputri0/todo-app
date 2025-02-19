@@ -7,8 +7,7 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-dark" type="submit">Search</button>
       </form> --}}
-      <a class="navbar-brand fw-bolder text-white" href="#">{{ config('app.name') }}
-        <i class="bi bi-card-checklist"></i>
+      <a class="navbar-brand fw-bolder bi bi-card-checklist text-white" href="#">{{ config('app.name') }}
       </a>
         <a href="{{route('biodata.create')}}" class="nav-link">
             <img class="rounded-circle me-lg-2" src="/assets/img/salsa1.jpg" alt=""
