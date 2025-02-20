@@ -6,11 +6,12 @@
       <!-- Logo aplikasi, diambil dari konfigurasi 'app.name' 
         Nama aplikasi diambil dari konfigurasi Laravel (config('app.name')), dan akan ditampilkan sebagai nama brand di navbar.-->
         <div class="d-flex align-items-center justify-content-between">
-        <a href="https://github.com/salsabillaputri0/" class="nav-link">
-          <a href="https://www.instagram.com/evolvesalsabilla/" class="nav-link">
           <span class="d-none d-lg-inline-flex text-white"> 
+            <a href="https://github.com/salsabillaputri0/" class="nav-link">
             <i class="bi bi-github gap-2 px-2"></i>
+            <a href="https://www.instagram.com/evolvesalsabilla/" class="nav-link">
             <i class="bi bi-instagram"></i>
+            
             </span>
       </a>
     </div>
