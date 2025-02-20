@@ -28,17 +28,20 @@
         /* Memastikan konten memenuhi tinggi layar */
 
     }
-.container {
-    width: 100%;
-    height: 100vh;
-    background-image: url('{{ asset('images/greenwal.jpeg') }}');
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    
+    .container {
+    width: 100%; /* Mengatur lebar elemen container menjadi 100% dari lebar viewport atau elemen induk */
+    height: 100vh; /* Mengatur tinggi elemen container menjadi 100% dari tinggi viewport (viewport height) */
+    /* Mengatur background gambar */
+    background-image: url('{{ asset('images/greenwal.jpeg') }}'); 
+    /* Menggunakan directive Blade untuk mengatur URL gambar (dalam kasus ini gambar 'greenwal.jpeg') yang terletak di folder 'images'. */
+    background-position: center; /* Mengatur posisi background agar selalu berada di tengah area container */
+    background-size: cover; /* Mengatur background gambar agar selalu menutupi seluruh area container, memotong jika perlu untuk menghindari distorsi */
+    display: flex; /* Menjadikan elemen container menggunakan Flexbox untuk tata letak */
+    align-items: center; /* Menyejajarkan elemen-elemen di dalam container secara vertikal ke tengah */
+    justify-content: center; /* Menyejajarkan elemen-elemen di dalam container secara horizontal ke tengah */
 }
+
 
 .card {
     width: 220%;

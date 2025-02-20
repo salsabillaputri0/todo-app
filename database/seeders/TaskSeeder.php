@@ -1,26 +1,27 @@
 <?php
 
-namespace Database\Seeders;
+namespace Database\Seeders; // Menyatakan bahwa ini adalah bagian dari namespace Database\Seeders
 
-use App\Models\Task;
-use App\Models\TaskList;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use App\Models\Task; // Mengimpor model Task untuk digunakan dalam seeding data
+use App\Models\TaskList; // Mengimpor model TaskList untuk mendapatkan ID berdasarkan nama list
+use Illuminate\Database\Console\Seeds\WithoutModelEvents; // Menggunakan trait untuk menghindari peristiwa model saat seeding data
+use Illuminate\Database\Seeder; // Mengimpor kelas Seeder untuk membuat seeder
 
-class TaskSeeder extends Seeder
+class TaskSeeder extends Seeder // Mendefinisikan kelas TaskSeeder yang mewarisi dari Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
+        // Menyusun array data yang akan disertakan ke dalam tabel tasks
         $tasks = [
             [
-                'name' => 'Belajar Laravel',
-                'description' => 'Belajar Laravel di santri koding',
-                'is_completed' => false,
-                'priority' => 'medium',
-                'list_id' => TaskList::where('name', 'Belajar')->first()->id,
+                'name' => 'Belajar Laravel', // Nama tugas pertama
+                'description' => 'Belajar Laravel di santri koding', // Deskripsi tugas
+                'is_completed' => false, // Status tugas, apakah sudah selesai atau belum
+                'priority' => 'medium', // Prioritas tugas
+                'list_id' => TaskList::where('name', 'Belajar')->first()->id, // Mengambil ID list dengan nama 'Belajar'
             ],
             [
                 'name' => 'Belajar React',
@@ -34,7 +35,7 @@ class TaskSeeder extends Seeder
                 'description' => 'Liburan ke Pantai bersama keluarga',
                 'is_completed' => false,
                 'priority' => 'low',
-                'list_id' => TaskList::where('name', 'Liburan')->first()->id,
+                'list_id' => TaskList::where('name', 'Liburan')->first()->id, // Mengambil ID list dengan nama 'Liburan'
             ],
             [
                 'name' => 'Villa',
@@ -48,7 +49,7 @@ class TaskSeeder extends Seeder
                 'description' => 'Tugas Matematika bu Nina',
                 'is_completed' => true,
                 'priority' => 'medium',
-                'list_id' => TaskList::where('name', 'Tugas')->first()->id,
+                'list_id' => TaskList::where('name', 'Tugas')->first()->id, // Mengambil ID list dengan nama 'Tugas'
             ],
             [
                 'name' => 'PAIBP',
@@ -66,6 +67,7 @@ class TaskSeeder extends Seeder
             ],
         ];
 
-        Task::insert($tasks);
+        // Menyisipkan data ke dalam tabel Task
+        Task::insert($tasks); // Menggunakan metode insert untuk memasukkan data ke database
     }
 }

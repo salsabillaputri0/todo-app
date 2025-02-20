@@ -18,7 +18,7 @@
       </a>
         <a href="{{route('biodata.create')}}" class="nav-link">
             <span class="d-none d-lg-inline-flex text-white">
-              <i class="bi bi-person-square px-2"></i>
+              <i class="bi bi-person px-2"></i>
               <b>PROFILE</b></span>
         </a>
         
